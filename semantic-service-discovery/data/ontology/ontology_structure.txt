@@ -1,0 +1,58 @@
+TravelService
+
+├── AccommodationService
+│   ├── HotelService
+│   │   ├── LuxuryHotelService
+│   │   ├── BudgetHotelService
+│   │   └── ResortHotelService
+│   │
+│   ├── HostelService
+│   ├── ApartmentRentalService
+│   ├── VillaRentalService
+│   └── CampingService
+│
+├── TransportationService
+│   ├── FlightService
+│   │   ├── DomesticFlightService
+│   │   └── InternationalFlightService
+│   │
+│   ├── TrainService
+│   ├── BusService
+│   ├── TaxiService
+│   ├── AirportTransferService
+│   ├── CarRentalService
+│   └── BikeRentalService
+│
+├── TourismService
+│   ├── TourGuideService
+│   ├── MuseumRecommendationService
+│   ├── HistoricalPlaceService
+│   ├── CityTourService
+│   ├── EventRecommendationService
+│   └── RestaurantRecommendationService
+│
+├── PlanningService
+│   ├── TripPlannerService
+│   ├── BudgetPlannerService
+│   ├── RouteOptimizationService
+│   ├── VacationRecommendationService
+│   └── SchedulePlannerService
+│
+├── DocumentationService
+│   ├── VisaApplicationService
+│   ├── PassportRenewalService
+│   ├── EmbassyAppointmentService
+│   └── TravelDocumentVerificationService
+│
+├── InsuranceAndPaymentService
+│   ├── TravelInsuranceService
+│   ├── BookingCancellationService
+│   ├── RefundService
+│   ├── CurrencyExchangeService
+│   └── InternationalPaymentService
+│
+└── SafetyAndWeatherService
+    ├── WeatherForecastService
+    ├── EmergencyTravelAlertService
+    ├── SafeDestinationService
+    └── TravelRiskAssessmentService

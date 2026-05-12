@@ -1,0 +1,37 @@
+SERVICE SCENARIO PLAN
+
+Domain: Travel
+
+1. AccommodationService - 16 services
+   Purpose: Services related to hotels, hostels, apartments, villas, resorts, camping and general accommodation search/reservation.
+
+2. TransportationService - 15 services
+   Purpose: Services related to flight, train, bus, taxi, airport transfer, car rental, bike rental and route-based transportation.
+
+3. TourismService - 9 services
+   Purpose: Services related to tour guides, museums, historical places, city tours, events, restaurants and tourist attractions.
+
+4. PlanningService - 8 services
+   Purpose: Services related to trip planning, budget planning, route optimization, vacation recommendation and schedule planning.
+
+5. DocumentationService - 4 services
+   Purpose: Services related to visa applications, passport renewal, embassy appointments and travel document verification.
+
+6. InsuranceAndPaymentService - 5 services
+   Purpose: Services related to travel insurance, booking cancellation, refunds, currency exchange and international payments.
+
+7. SafetyAndWeatherService - 3 services
+   Purpose: Services related to weather forecasts, travel alerts, safe destination recommendations and risk assessment.
+
+Total planned services: 60
+
+
+NOTES
+
+- Service distribution was intentionally designed in a non-uniform way to better reflect realistic travel ecosystems.
+
+- Accommodation and Transportation services were given higher representation because they are the most frequently used service categories in travel-related applications.
+
+- Documentation and Safety services were kept smaller due to their more limited and specialized usage scenarios.
+
+- QoS parameters (response time, cost score, reliability) will later be added to distinguish semantically similar services.

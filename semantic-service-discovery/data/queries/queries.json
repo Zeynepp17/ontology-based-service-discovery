@@ -1,0 +1,947 @@
+[
+    {
+        "query_id": "Q001",
+        "query_text": "Find affordable accommodation in Istanbul",
+        "domain": "travel",
+        "category": "AccommodationService",
+        "expected_concepts": [
+            "AccommodationService",
+            "BudgetHotelService"
+        ],
+        "exact_match": [
+            "TR003"
+        ],
+        "plugin_match": [
+            "TR001",
+            "TR016"
+        ],
+        "partial_match": [
+            "TR005",
+            "TR006"
+        ],
+        "irrelevant": [
+            "TR020",
+            "TR049"
+        ]
+    },
+    {
+        "query_id": "Q002",
+        "query_text": "Book a luxury hotel for a vacation",
+        "domain": "travel",
+        "category": "AccommodationService",
+        "expected_concepts": [
+            "AccommodationService",
+            "LuxuryHotelService"
+        ],
+        "exact_match": [
+            "TR002"
+        ],
+        "plugin_match": [
+            "TR004",
+            "TR014"
+        ],
+        "partial_match": [
+            "TR001",
+            "TR016"
+        ],
+        "irrelevant": [
+            "TR021",
+            "TR056"
+        ]
+    },
+    {
+        "query_id": "Q003",
+        "query_text": "Reserve a hostel for backpackers",
+        "domain": "travel",
+        "category": "AccommodationService",
+        "expected_concepts": [
+            "AccommodationService",
+            "HostelService"
+        ],
+        "exact_match": [
+            "TR005"
+        ],
+        "plugin_match": [
+            "TR003"
+        ],
+        "partial_match": [
+            "TR001",
+            "TR008"
+        ],
+        "irrelevant": [
+            "TR017",
+            "TR053"
+        ]
+    },
+    {
+        "query_id": "Q004",
+        "query_text": "Rent an apartment for a long stay",
+        "domain": "travel",
+        "category": "AccommodationService",
+        "expected_concepts": [
+            "AccommodationService",
+            "ApartmentRentalService"
+        ],
+        "exact_match": [
+            "TR012"
+        ],
+        "plugin_match": [
+            "TR006"
+        ],
+        "partial_match": [
+            "TR016"
+        ],
+        "irrelevant": [
+            "TR023",
+            "TR059"
+        ]
+    },
+    {
+        "query_id": "Q005",
+        "query_text": "Find a beach resort for summer holiday",
+        "domain": "travel",
+        "category": "AccommodationService",
+        "expected_concepts": [
+            "AccommodationService",
+            "ResortHotelService"
+        ],
+        "exact_match": [
+            "TR014"
+        ],
+        "plugin_match": [
+            "TR004",
+            "TR002"
+        ],
+        "partial_match": [
+            "TR001",
+            "TR016"
+        ],
+        "irrelevant": [
+            "TR029",
+            "TR050"
+        ]
+    },
+    {
+        "query_id": "Q006",
+        "query_text": "Book a family friendly hotel",
+        "domain": "travel",
+        "category": "AccommodationService",
+        "expected_concepts": [
+            "AccommodationService",
+            "HotelService"
+        ],
+        "exact_match": [
+            "TR009"
+        ],
+        "plugin_match": [
+            "TR001",
+            "TR013"
+        ],
+        "partial_match": [
+            "TR010",
+            "TR016"
+        ],
+        "irrelevant": [
+            "TR028",
+            "TR055"
+        ]
+    },
+    {
+        "query_id": "Q007",
+        "query_text": "Find pet friendly accommodation",
+        "domain": "travel",
+        "category": "AccommodationService",
+        "expected_concepts": [
+            "AccommodationService",
+            "HotelService"
+        ],
+        "exact_match": [
+            "TR010"
+        ],
+        "plugin_match": [
+            "TR001",
+            "TR016"
+        ],
+        "partial_match": [
+            "TR006",
+            "TR007"
+        ],
+        "irrelevant": [
+            "TR032",
+            "TR057"
+        ]
+    },
+    {
+        "query_id": "Q008",
+        "query_text": "Book a hotel for a business trip",
+        "domain": "travel",
+        "category": "AccommodationService",
+        "expected_concepts": [
+            "AccommodationService",
+            "HotelService"
+        ],
+        "exact_match": [
+            "TR013"
+        ],
+        "plugin_match": [
+            "TR001",
+            "TR011"
+        ],
+        "partial_match": [
+            "TR016"
+        ],
+        "irrelevant": [
+            "TR035",
+            "TR058"
+        ]
+    },
+    {
+        "query_id": "Q009",
+        "query_text": "Find last minute hotel booking",
+        "domain": "travel",
+        "category": "AccommodationService",
+        "expected_concepts": [
+            "AccommodationService",
+            "HotelService"
+        ],
+        "exact_match": [
+            "TR011"
+        ],
+        "plugin_match": [
+            "TR001"
+        ],
+        "partial_match": [
+            "TR016",
+            "TR003"
+        ],
+        "irrelevant": [
+            "TR027",
+            "TR052"
+        ]
+    },
+    {
+        "query_id": "Q010",
+        "query_text": "Rent a private villa for vacation",
+        "domain": "travel",
+        "category": "AccommodationService",
+        "expected_concepts": [
+            "AccommodationService",
+            "VillaRentalService"
+        ],
+        "exact_match": [
+            "TR007"
+        ],
+        "plugin_match": [
+            "TR004"
+        ],
+        "partial_match": [
+            "TR006",
+            "TR016"
+        ],
+        "irrelevant": [
+            "TR020",
+            "TR056"
+        ]
+    },
+    {
+        "query_id": "Q011",
+        "query_text": "Reserve a camping area in nature",
+        "domain": "travel",
+        "category": "AccommodationService",
+        "expected_concepts": [
+            "AccommodationService",
+            "CampingService"
+        ],
+        "exact_match": [
+            "TR008"
+        ],
+        "plugin_match": [
+            "TR015"
+        ],
+        "partial_match": [
+            "TR007"
+        ],
+        "irrelevant": [
+            "TR019",
+            "TR054"
+        ]
+    },
+    {
+        "query_id": "Q012",
+        "query_text": "Compare accommodation options by budget and quality",
+        "domain": "travel",
+        "category": "AccommodationService",
+        "expected_concepts": [
+            "AccommodationService",
+            "HotelService"
+        ],
+        "exact_match": [
+            "TR016"
+        ],
+        "plugin_match": [
+            "TR001",
+            "TR003"
+        ],
+        "partial_match": [
+            "TR002",
+            "TR006"
+        ],
+        "irrelevant": [
+            "TR030",
+            "TR051"
+        ]
+    },
+    {
+        "query_id": "Q013",
+        "query_text": "Book an international flight ticket",
+        "domain": "travel",
+        "category": "TransportationService",
+        "expected_concepts": [
+            "TransportationService",
+            "InternationalFlightService"
+        ],
+        "exact_match": [
+            "TR019"
+        ],
+        "plugin_match": [
+            "TR017"
+        ],
+        "partial_match": [
+            "TR018"
+        ],
+        "irrelevant": [
+            "TR005",
+            "TR053"
+        ]
+    },
+    {
+        "query_id": "Q014",
+        "query_text": "Reserve a domestic flight",
+        "domain": "travel",
+        "category": "TransportationService",
+        "expected_concepts": [
+            "TransportationService",
+            "DomesticFlightService"
+        ],
+        "exact_match": [
+            "TR018"
+        ],
+        "plugin_match": [
+            "TR017"
+        ],
+        "partial_match": [
+            "TR019"
+        ],
+        "irrelevant": [
+            "TR008",
+            "TR056"
+        ]
+    },
+    {
+        "query_id": "Q015",
+        "query_text": "Find airport transfer transportation",
+        "domain": "travel",
+        "category": "TransportationService",
+        "expected_concepts": [
+            "TransportationService",
+            "AirportTransferService"
+        ],
+        "exact_match": [
+            "TR022"
+        ],
+        "plugin_match": [
+            "TR023",
+            "TR030"
+        ],
+        "partial_match": [
+            "TR024"
+        ],
+        "irrelevant": [
+            "TR014",
+            "TR049"
+        ]
+    },
+    {
+        "query_id": "Q016",
+        "query_text": "Rent a car for city travel",
+        "domain": "travel",
+        "category": "TransportationService",
+        "expected_concepts": [
+            "TransportationService",
+            "CarRentalService"
+        ],
+        "exact_match": [
+            "TR025"
+        ],
+        "plugin_match": [
+            "TR026",
+            "TR027"
+        ],
+        "partial_match": [
+            "TR024"
+        ],
+        "irrelevant": [
+            "TR033",
+            "TR055"
+        ]
+    },
+    {
+        "query_id": "Q017",
+        "query_text": "Book train transportation between cities",
+        "domain": "travel",
+        "category": "TransportationService",
+        "expected_concepts": [
+            "TransportationService",
+            "TrainService"
+        ],
+        "exact_match": [
+            "TR020"
+        ],
+        "plugin_match": [
+            "TR021"
+        ],
+        "partial_match": [
+            "TR029"
+        ],
+        "irrelevant": [
+            "TR003",
+            "TR052"
+        ]
+    },
+    {
+        "query_id": "Q018",
+        "query_text": "Find public transportation routes",
+        "domain": "travel",
+        "category": "TransportationService",
+        "expected_concepts": [
+            "TransportationService",
+            "PublicTransportService"
+        ],
+        "exact_match": [
+            "TR029"
+        ],
+        "plugin_match": [
+            "TR031"
+        ],
+        "partial_match": [
+            "TR021"
+        ],
+        "irrelevant": [
+            "TR007",
+            "TR058"
+        ]
+    },
+    {
+        "query_id": "Q019",
+        "query_text": "Book a private driver service",
+        "domain": "travel",
+        "category": "TransportationService",
+        "expected_concepts": [
+            "TransportationService",
+            "TaxiService"
+        ],
+        "exact_match": [
+            "TR030"
+        ],
+        "plugin_match": [
+            "TR023"
+        ],
+        "partial_match": [
+            "TR024"
+        ],
+        "irrelevant": [
+            "TR034",
+            "TR057"
+        ]
+    },
+    {
+        "query_id": "Q020",
+        "query_text": "Create a transportation plan using multiple travel methods",
+        "domain": "travel",
+        "category": "TransportationService",
+        "expected_concepts": [
+            "TransportationService",
+            "RouteOptimizationService"
+        ],
+        "exact_match": [
+            "TR031"
+        ],
+        "plugin_match": [
+            "TR043"
+        ],
+        "partial_match": [
+            "TR029",
+            "TR017"
+        ],
+        "irrelevant": [
+            "TR010",
+            "TR051"
+        ]
+    },
+    {
+        "query_id": "Q021",
+        "query_text": "Reserve a ferry ticket",
+        "domain": "travel",
+        "category": "TransportationService",
+        "expected_concepts": [
+            "TransportationService",
+            "FerryService"
+        ],
+        "exact_match": [
+            "TR028"
+        ],
+        "plugin_match": [
+            "TR020"
+        ],
+        "partial_match": [
+            "TR021"
+        ],
+        "irrelevant": [
+            "TR013",
+            "TR054"
+        ]
+    },
+    {
+        "query_id": "Q022",
+        "query_text": "Find a taxi near the airport",
+        "domain": "travel",
+        "category": "TransportationService",
+        "expected_concepts": [
+            "TransportationService",
+            "TaxiService"
+        ],
+        "exact_match": [
+            "TR023"
+        ],
+        "plugin_match": [
+            "TR022",
+            "TR024"
+        ],
+        "partial_match": [
+            "TR030"
+        ],
+        "irrelevant": [
+            "TR038",
+            "TR060"
+        ]
+    },
+    {
+        "query_id": "Q023",
+        "query_text": "Book a guided city tour",
+        "domain": "travel",
+        "category": "TourismService",
+        "expected_concepts": [
+            "TourismService",
+            "CityTourService"
+        ],
+        "exact_match": [
+            "TR035"
+        ],
+        "plugin_match": [
+            "TR032"
+        ],
+        "partial_match": [
+            "TR040"
+        ],
+        "irrelevant": [
+            "TR025",
+            "TR053"
+        ]
+    },
+    {
+        "query_id": "Q024",
+        "query_text": "Find museums and historical attractions",
+        "domain": "travel",
+        "category": "TourismService",
+        "expected_concepts": [
+            "TourismService",
+            "MuseumRecommendationService"
+        ],
+        "exact_match": [
+            "TR033"
+        ],
+        "plugin_match": [
+            "TR034"
+        ],
+        "partial_match": [
+            "TR040"
+        ],
+        "irrelevant": [
+            "TR021",
+            "TR055"
+        ]
+    },
+    {
+        "query_id": "Q025",
+        "query_text": "Search for local restaurants in a travel destination",
+        "domain": "travel",
+        "category": "TourismService",
+        "expected_concepts": [
+            "TourismService",
+            "RestaurantRecommendationService"
+        ],
+        "exact_match": [
+            "TR037"
+        ],
+        "plugin_match": [
+            "TR036"
+        ],
+        "partial_match": [
+            "TR040"
+        ],
+        "irrelevant": [
+            "TR019",
+            "TR050"
+        ]
+    },
+    {
+        "query_id": "Q026",
+        "query_text": "Find cultural activities for tourists",
+        "domain": "travel",
+        "category": "TourismService",
+        "expected_concepts": [
+            "TourismService",
+            "CulturalExperienceService"
+        ],
+        "exact_match": [
+            "TR039"
+        ],
+        "plugin_match": [
+            "TR036"
+        ],
+        "partial_match": [
+            "TR032"
+        ],
+        "irrelevant": [
+            "TR028",
+            "TR056"
+        ]
+    },
+    {
+        "query_id": "Q027",
+        "query_text": "Book an adventure tourism activity",
+        "domain": "travel",
+        "category": "TourismService",
+        "expected_concepts": [
+            "TourismService",
+            "AdventureActivityService"
+        ],
+        "exact_match": [
+            "TR038"
+        ],
+        "plugin_match": [
+            "TR035"
+        ],
+        "partial_match": [
+            "TR040"
+        ],
+        "irrelevant": [
+            "TR012",
+            "TR051"
+        ]
+    },
+    {
+        "query_id": "Q028",
+        "query_text": "Find tourist attractions in a city",
+        "domain": "travel",
+        "category": "TourismService",
+        "expected_concepts": [
+            "TourismService",
+            "TouristAttractionService"
+        ],
+        "exact_match": [
+            "TR040"
+        ],
+        "plugin_match": [
+            "TR034",
+            "TR035"
+        ],
+        "partial_match": [
+            "TR033"
+        ],
+        "irrelevant": [
+            "TR026",
+            "TR059"
+        ]
+    },
+    {
+        "query_id": "Q029",
+        "query_text": "Create a personalized travel itinerary",
+        "domain": "travel",
+        "category": "PlanningService",
+        "expected_concepts": [
+            "PlanningService",
+            "SchedulePlannerService"
+        ],
+        "exact_match": [
+            "TR048"
+        ],
+        "plugin_match": [
+            "TR045",
+            "TR041"
+        ],
+        "partial_match": [
+            "TR044"
+        ],
+        "irrelevant": [
+            "TR020",
+            "TR053"
+        ]
+    },
+    {
+        "query_id": "Q030",
+        "query_text": "Plan a low budget vacation",
+        "domain": "travel",
+        "category": "PlanningService",
+        "expected_concepts": [
+            "PlanningService",
+            "BudgetPlannerService"
+        ],
+        "exact_match": [
+            "TR042"
+        ],
+        "plugin_match": [
+            "TR041"
+        ],
+        "partial_match": [
+            "TR044",
+            "TR047"
+        ],
+        "irrelevant": [
+            "TR014",
+            "TR057"
+        ]
+    },
+    {
+        "query_id": "Q031",
+        "query_text": "Optimize a travel route between multiple destinations",
+        "domain": "travel",
+        "category": "PlanningService",
+        "expected_concepts": [
+            "PlanningService",
+            "RouteOptimizationService"
+        ],
+        "exact_match": [
+            "TR043"
+        ],
+        "plugin_match": [
+            "TR031"
+        ],
+        "partial_match": [
+            "TR041"
+        ],
+        "irrelevant": [
+            "TR009",
+            "TR050"
+        ]
+    },
+    {
+        "query_id": "Q032",
+        "query_text": "Find vacation recommendations for summer travel",
+        "domain": "travel",
+        "category": "PlanningService",
+        "expected_concepts": [
+            "PlanningService",
+            "VacationRecommendationService"
+        ],
+        "exact_match": [
+            "TR044"
+        ],
+        "plugin_match": [
+            "TR047"
+        ],
+        "partial_match": [
+            "TR041"
+        ],
+        "irrelevant": [
+            "TR021",
+            "TR054"
+        ]
+    },
+    {
+        "query_id": "Q033",
+        "query_text": "Plan a group travel schedule",
+        "domain": "travel",
+        "category": "PlanningService",
+        "expected_concepts": [
+            "PlanningService",
+            "TripPlannerService"
+        ],
+        "exact_match": [
+            "TR046"
+        ],
+        "plugin_match": [
+            "TR041",
+            "TR045"
+        ],
+        "partial_match": [
+            "TR048"
+        ],
+        "irrelevant": [
+            "TR027",
+            "TR058"
+        ]
+    },
+    {
+        "query_id": "Q034",
+        "query_text": "Apply for a travel visa",
+        "domain": "travel",
+        "category": "DocumentationService",
+        "expected_concepts": [
+            "DocumentationService",
+            "VisaApplicationService"
+        ],
+        "exact_match": [
+            "TR049"
+        ],
+        "plugin_match": [
+            "TR051"
+        ],
+        "partial_match": [
+            "TR052"
+        ],
+        "irrelevant": [
+            "TR025",
+            "TR053"
+        ]
+    },
+    {
+        "query_id": "Q035",
+        "query_text": "Renew an expired passport",
+        "domain": "travel",
+        "category": "DocumentationService",
+        "expected_concepts": [
+            "DocumentationService",
+            "PassportRenewalService"
+        ],
+        "exact_match": [
+            "TR050"
+        ],
+        "plugin_match": [
+            "TR052"
+        ],
+        "partial_match": [
+            "TR049"
+        ],
+        "irrelevant": [
+            "TR021",
+            "TR056"
+        ]
+    },
+    {
+        "query_id": "Q036",
+        "query_text": "Verify travel documents before international travel",
+        "domain": "travel",
+        "category": "DocumentationService",
+        "expected_concepts": [
+            "DocumentationService",
+            "TravelDocumentVerificationService"
+        ],
+        "exact_match": [
+            "TR052"
+        ],
+        "plugin_match": [
+            "TR049",
+            "TR050"
+        ],
+        "partial_match": [
+            "TR051"
+        ],
+        "irrelevant": [
+            "TR011",
+            "TR058"
+        ]
+    },
+    {
+        "query_id": "Q037",
+        "query_text": "Create travel insurance for an international trip",
+        "domain": "travel",
+        "category": "InsuranceAndPaymentService",
+        "expected_concepts": [
+            "InsuranceAndPaymentService",
+            "TravelInsuranceService"
+        ],
+        "exact_match": [
+            "TR053"
+        ],
+        "plugin_match": [
+            "TR057"
+        ],
+        "partial_match": [
+            "TR054"
+        ],
+        "irrelevant": [
+            "TR028",
+            "TR040"
+        ]
+    },
+    {
+        "query_id": "Q038",
+        "query_text": "Process a refund for a cancelled reservation",
+        "domain": "travel",
+        "category": "InsuranceAndPaymentService",
+        "expected_concepts": [
+            "InsuranceAndPaymentService",
+            "RefundService"
+        ],
+        "exact_match": [
+            "TR055"
+        ],
+        "plugin_match": [
+            "TR054"
+        ],
+        "partial_match": [
+            "TR057"
+        ],
+        "irrelevant": [
+            "TR018",
+            "TR039"
+        ]
+    },
+    {
+        "query_id": "Q039",
+        "query_text": "Get emergency travel alerts for a destination",
+        "domain": "travel",
+        "category": "SafetyAndWeatherService",
+        "expected_concepts": [
+            "SafetyAndWeatherService",
+            "EmergencyTravelAlertService"
+        ],
+        "exact_match": [
+            "TR059"
+        ],
+        "plugin_match": [
+            "TR060"
+        ],
+        "partial_match": [
+            "TR058"
+        ],
+        "irrelevant": [
+            "TR020",
+            "TR042"
+        ]
+    },
+    {
+        "query_id": "Q040",
+        "query_text": "Check weather forecast before traveling",
+        "domain": "travel",
+        "category": "SafetyAndWeatherService",
+        "expected_concepts": [
+            "SafetyAndWeatherService",
+            "WeatherForecastService"
+        ],
+        "exact_match": [
+            "TR058"
+        ],
+        "plugin_match": [
+            "TR060"
+        ],
+        "partial_match": [
+            "TR059"
+        ],
+        "irrelevant": [
+            "TR023",
+            "TR047"
+        ]
+    }
+]
