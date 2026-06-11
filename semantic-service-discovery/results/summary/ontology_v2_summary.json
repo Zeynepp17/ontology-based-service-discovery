@@ -1,0 +1,8 @@
+{
+  "method": "Ontology-Based Matching V2",
+  "precision_at_5": 0.4950,
+  "recall_at_5": 0.7075,
+  "f1_score": 0.5776,
+  "ndcg_at_5": 0.7532,
+  "average_query_time": 0.000372
+}

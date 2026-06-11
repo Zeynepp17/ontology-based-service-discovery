@@ -1,0 +1,8 @@
+{
+  "method": "Hybrid Matching",
+  "precision_at_5": 0.5350,
+  "recall_at_5": 0.7504,
+  "f1_score": 0.6192,
+  "ndcg_at_5": 0.7952,
+  "average_query_time": 0.005298
+}
