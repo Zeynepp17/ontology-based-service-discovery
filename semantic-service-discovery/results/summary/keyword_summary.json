@@ -1,0 +1,8 @@
+{
+  "method": "Keyword-Based Baseline",
+  "precision_at_5": 0.3900,
+  "recall_at_5": 0.5446,
+  "f1_score": 0.4501,
+  "ndcg_at_5": 0.6076,
+  "average_query_time": 0.003886
+}
