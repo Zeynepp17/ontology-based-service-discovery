@@ -150,7 +150,7 @@ def ontology_similarity(query_concepts, service_concepts):
     return sum(scores) / len(scores)
 
 
-def rank_services_ontology(query, services, top_k=5):
+def rank_services_ontology(query, services, top_k=10):
     query_concepts = query.get("expected_concepts", [])
 
     ranked = []
@@ -226,12 +226,14 @@ def main():
     services = load_json(SERVICES_PATH)
     queries = load_json(QUERIES_PATH)
 
-    k = 5
+    eval_k = 5
+    retrieval_k = 10
 
-    total_precision = 0.0
-    total_recall = 0.0
+    total_precision_5 = 0.0
+    total_precision_10 = 0.0
+    total_recall_5 = 0.0
     total_f1 = 0.0
-    total_ndcg = 0.0
+    total_ndcg_5 = 0.0
     total_time = 0.0
 
     print("Ontology-Based Matching V2 Started")
@@ -242,7 +244,11 @@ def main():
     for query in queries:
         start_time = time.perf_counter()
 
-        results = rank_services_ontology(query, services, top_k=k)
+        results = rank_services_ontology(
+            query,
+            services,
+            top_k=retrieval_k
+        )
 
         elapsed_time = time.perf_counter() - start_time
         total_time += elapsed_time
@@ -250,21 +256,23 @@ def main():
         retrieved_ids = [service["service_id"] for service, score in results]
         relevant_ids = get_relevant_services(query)
 
-        precision = precision_at_k(retrieved_ids, relevant_ids, k)
-        recall = recall_at_k(retrieved_ids, relevant_ids, k)
-        f1 = f1_score(precision, recall)
-        ndcg = ndcg_at_k(retrieved_ids, relevant_ids, k)
+        precision_5 = precision_at_k(retrieved_ids, relevant_ids, eval_k)
+        precision_10 = precision_at_k(retrieved_ids, relevant_ids, retrieval_k)
+        recall_5 = recall_at_k(retrieved_ids, relevant_ids, eval_k)
+        f1 = f1_score(precision_5, recall_5)
+        ndcg_5 = ndcg_at_k(retrieved_ids, relevant_ids, eval_k)
 
-        total_precision += precision
-        total_recall += recall
+        total_precision_5 += precision_5
+        total_precision_10 += precision_10
+        total_recall_5 += recall_5
         total_f1 += f1
-        total_ndcg += ndcg
+        total_ndcg_5 += ndcg_5
 
         print(f"Query ID: {query['query_id']}")
         print(f"Query: {query['query_text']}")
         print(f"Expected concepts: {query.get('expected_concepts', [])}")
         print(f"Relevant services: {sorted(relevant_ids)}")
-        print("Top-5 results:")
+        print("Top-10 results:")
 
         for rank, (service, score) in enumerate(results, start=1):
             marker = "OK" if service["service_id"] in relevant_ids else "NO"
@@ -274,10 +282,11 @@ def main():
             )
 
         print(
-            f"P@5: {precision:.4f} | "
-            f"R@5: {recall:.4f} | "
+            f"P@5: {precision_5:.4f} | "
+            f"P@10: {precision_10:.4f} | "
+            f"R@5: {recall_5:.4f} | "
             f"F1: {f1:.4f} | "
-            f"nDCG@5: {ndcg:.4f} | "
+            f"nDCG@5: {ndcg_5:.4f} | "
             f"Time: {elapsed_time:.6f}s"
         )
 
@@ -287,12 +296,12 @@ def main():
 
     print("\nSUMMARY")
     print("=" * 80)
-    print(f"Average Precision@5: {total_precision / query_count:.4f}")
-    print(f"Average Recall@5: {total_recall / query_count:.4f}")
+    print(f"Average Precision@5: {total_precision_5 / query_count:.4f}")
+    print(f"Average Precision@10: {total_precision_10 / query_count:.4f}")
+    print(f"Average Recall@5: {total_recall_5 / query_count:.4f}")
     print(f"Average F1: {total_f1 / query_count:.4f}")
-    print(f"Average nDCG@5: {total_ndcg / query_count:.4f}")
+    print(f"Average nDCG@5: {total_ndcg_5 / query_count:.4f}")
     print(f"Average Query Time: {total_time / query_count:.6f}s")
-
 
 if __name__ == "__main__":
     main()
