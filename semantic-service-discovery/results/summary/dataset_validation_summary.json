@@ -1,0 +1,32 @@
+{
+  "service_count": 300,
+  "query_count": 180,
+  "service_domain_distribution": {
+    "Travel": 150,
+    "Ecommerce": 150
+  },
+  "query_domain_distribution": {
+    "Travel": 90,
+    "Ecommerce": 90
+  },
+  "service_category_distribution": {
+    "Travel::AccommodationService": 30,
+    "Travel::TransportationService": 20,
+    "Travel::TourismService": 20,
+    "Travel::PlanningService": 20,
+    "Travel::DocumentationService": 20,
+    "Travel::InsuranceAndPaymentService": 20,
+    "Travel::SafetyAndWeatherService": 20,
+    "Ecommerce::ProductDiscoveryService": 30,
+    "Ecommerce::OrderManagementService": 20,
+    "Ecommerce::PaymentService": 20,
+    "Ecommerce::DeliveryService": 20,
+    "Ecommerce::ReturnRefundService": 20,
+    "Ecommerce::CustomerSupportService": 20,
+    "Ecommerce::InventoryService": 20
+  },
+  "duplicate_service_names": [],
+  "duplicate_query_texts": [],
+  "validation_errors": [],
+  "is_valid": true
+}

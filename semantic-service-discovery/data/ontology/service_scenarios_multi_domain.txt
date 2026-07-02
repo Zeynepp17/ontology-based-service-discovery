@@ -1,0 +1,198 @@
+MULTI-DOMAIN SERVICE SCENARIO PLAN
+
+This document describes the planned service distribution used in the expanded benchmark dataset.
+
+Total planned services: 300
+Total planned queries: 180
+Domains: Travel and E-commerce
+
+============================================================
+1. TRAVEL DOMAIN
+============================================================
+
+Total Travel services: 150
+Total Travel queries: 90
+
+1.1 AccommodationService - 30 services
+Purpose:
+Services related to hotels, hostels, apartments, villas, resorts, camping, and general accommodation search or reservation.
+
+Example service concepts:
+- HotelService
+- LuxuryHotelService
+- BudgetHotelService
+- ResortHotelService
+- HostelService
+- ApartmentRentalService
+- VillaRentalService
+- CampingService
+
+1.2 TransportationService - 20 services
+Purpose:
+Services related to flights, trains, buses, taxis, airport transfers, car rental, bike rental, and route-based transportation.
+
+Example service concepts:
+- FlightService
+- DomesticFlightService
+- InternationalFlightService
+- TrainService
+- BusService
+- TaxiService
+- AirportTransferService
+- CarRentalService
+- BikeRentalService
+
+1.3 TourismService - 20 services
+Purpose:
+Services related to tour guides, museums, historical places, city tours, events, restaurants, and tourist attractions.
+
+Example service concepts:
+- TourGuideService
+- MuseumRecommendationService
+- HistoricalPlaceService
+- CityTourService
+- EventRecommendationService
+- RestaurantRecommendationService
+
+1.4 PlanningService - 20 services
+Purpose:
+Services related to trip planning, budget planning, route optimization, vacation recommendations, and schedule planning.
+
+Example service concepts:
+- TripPlannerService
+- BudgetPlannerService
+- RouteOptimizationService
+- VacationRecommendationService
+- SchedulePlannerService
+
+1.5 DocumentationService - 20 services
+Purpose:
+Services related to visa applications, passport renewal, embassy appointments, and travel document verification.
+
+Example service concepts:
+- VisaApplicationService
+- PassportRenewalService
+- EmbassyAppointmentService
+- TravelDocumentVerificationService
+
+1.6 InsuranceAndPaymentService - 20 services
+Purpose:
+Services related to travel insurance, booking cancellation, refunds, currency exchange, and international payments.
+
+Example service concepts:
+- TravelInsuranceService
+- BookingCancellationService
+- RefundService
+- CurrencyExchangeService
+- InternationalPaymentService
+
+1.7 SafetyAndWeatherService - 20 services
+Purpose:
+Services related to weather forecasts, travel alerts, safe destination recommendations, and risk assessment.
+
+Example service concepts:
+- WeatherForecastService
+- EmergencyTravelAlertService
+- SafeDestinationService
+- TravelRiskAssessmentService
+
+
+============================================================
+2. E-COMMERCE DOMAIN
+============================================================
+
+Total E-commerce services: 150
+Total E-commerce queries: 90
+
+2.1 ProductDiscoveryService - 30 services
+Purpose:
+Services related to product search, recommendation, category browsing, price comparison, product reviews, and wishlists.
+
+Example service concepts:
+- ProductSearchService
+- ProductRecommendationService
+- CategoryBrowsingService
+- PriceComparisonService
+- ProductReviewService
+- WishlistService
+
+2.2 OrderManagementService - 20 services
+Purpose:
+Services related to cart management, checkout, order creation, order tracking, and order cancellation.
+
+Example service concepts:
+- CartManagementService
+- CheckoutService
+- OrderCreationService
+- OrderTrackingService
+- OrderCancellationService
+
+2.3 PaymentService - 20 services
+Purpose:
+Services related to online payment, card payment, wallet payment, installment payment, and invoice generation.
+
+Example service concepts:
+- OnlinePaymentService
+- CardPaymentService
+- WalletPaymentService
+- InstallmentPaymentService
+- InvoiceGenerationService
+
+2.4 DeliveryService - 20 services
+Purpose:
+Services related to shipment creation, shipment tracking, courier selection, delivery scheduling, and address validation.
+
+Example service concepts:
+- ShipmentCreationService
+- ShipmentTrackingService
+- CourierSelectionService
+- DeliverySchedulingService
+- AddressValidationService
+
+2.5 ReturnRefundService - 20 services
+Purpose:
+Services related to return requests, refund requests, product exchange, return label generation, and refund status tracking.
+
+Example service concepts:
+- ReturnRequestService
+- RefundRequestService
+- ExchangeRequestService
+- ReturnLabelService
+- RefundStatusService
+
+2.6 CustomerSupportService - 20 services
+Purpose:
+Services related to customer tickets, live chat, complaint management, FAQ recommendation, and support routing.
+
+Example service concepts:
+- CustomerTicketService
+- LiveChatService
+- ComplaintManagementService
+- FAQRecommendationService
+- SupportRoutingService
+
+2.7 InventoryService - 20 services
+Purpose:
+Services related to stock availability, stock reservation, warehouse lookup, restock notification, and inventory update.
+
+Example service concepts:
+- StockAvailabilityService
+- StockReservationService
+- WarehouseLookupService
+- RestockNotificationService
+- InventoryUpdateService
+
+
+============================================================
+DATASET DESIGN NOTES
+============================================================
+
+- The expanded dataset contains 300 services and 180 user queries.
+- The dataset includes two domains: Travel and E-commerce.
+- Each domain contains 150 services and 90 queries.
+- The service distribution is designed to cover both broad service categories and fine-grained subconcepts.
+- Exact, plugin, partial, and irrelevant relevance labels are used for evaluation.
+- Exact, plugin, and partial matches are considered relevant during metric calculation.
+- The dataset is a controlled benchmark dataset constructed for experimental evaluation.
+- Duplicate service names and duplicate query texts should be checked during validation.
+- The taxonomy hierarchy is used to support taxonomy-based and taxonomy-distance based semantic matching.

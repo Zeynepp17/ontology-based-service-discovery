@@ -1,0 +1,121 @@
+MULTI-DOMAIN TAXONOMY STRUCTURE
+
+Root Concept: Service
+
+├── TravelService
+│
+│   ├── AccommodationService
+│   │   ├── HotelService
+│   │   │   ├── LuxuryHotelService
+│   │   │   ├── BudgetHotelService
+│   │   │   └── ResortHotelService
+│   │   ├── HostelService
+│   │   ├── ApartmentRentalService
+│   │   ├── VillaRentalService
+│   │   └── CampingService
+│
+│   ├── TransportationService
+│   │   ├── FlightService
+│   │   │   ├── DomesticFlightService
+│   │   │   └── InternationalFlightService
+│   │   ├── TrainService
+│   │   ├── BusService
+│   │   ├── TaxiService
+│   │   ├── AirportTransferService
+│   │   ├── CarRentalService
+│   │   └── BikeRentalService
+│
+│   ├── TourismService
+│   │   ├── TourGuideService
+│   │   ├── MuseumRecommendationService
+│   │   ├── HistoricalPlaceService
+│   │   ├── CityTourService
+│   │   ├── EventRecommendationService
+│   │   └── RestaurantRecommendationService
+│
+│   ├── PlanningService
+│   │   ├── TripPlannerService
+│   │   ├── BudgetPlannerService
+│   │   ├── RouteOptimizationService
+│   │   ├── VacationRecommendationService
+│   │   └── SchedulePlannerService
+│
+│   ├── DocumentationService
+│   │   ├── VisaApplicationService
+│   │   ├── PassportRenewalService
+│   │   ├── EmbassyAppointmentService
+│   │   └── TravelDocumentVerificationService
+│
+│   ├── InsuranceAndPaymentService
+│   │   ├── TravelInsuranceService
+│   │   ├── BookingCancellationService
+│   │   ├── RefundService
+│   │   ├── CurrencyExchangeService
+│   │   └── InternationalPaymentService
+│
+│   └── SafetyAndWeatherService
+│       ├── WeatherForecastService
+│       ├── EmergencyTravelAlertService
+│       ├── SafeDestinationService
+│       └── TravelRiskAssessmentService
+│
+└── EcommerceService
+
+    ├── ProductDiscoveryService
+    │   ├── ProductSearchService
+    │   ├── ProductRecommendationService
+    │   ├── CategoryBrowsingService
+    │   ├── PriceComparisonService
+    │   ├── ProductReviewService
+    │   └── WishlistService
+    │
+    ├── OrderManagementService
+    │   ├── CartManagementService
+    │   ├── CheckoutService
+    │   ├── OrderCreationService
+    │   ├── OrderTrackingService
+    │   └── OrderCancellationService
+    │
+    ├── PaymentService
+    │   ├── OnlinePaymentService
+    │   ├── CardPaymentService
+    │   ├── WalletPaymentService
+    │   ├── InstallmentPaymentService
+    │   └── InvoiceGenerationService
+    │
+    ├── DeliveryService
+    │   ├── ShipmentCreationService
+    │   ├── ShipmentTrackingService
+    │   ├── CourierSelectionService
+    │   ├── DeliverySchedulingService
+    │   └── AddressValidationService
+    │
+    ├── ReturnRefundService
+    │   ├── ReturnRequestService
+    │   ├── RefundRequestService
+    │   ├── ExchangeRequestService
+    │   ├── ReturnLabelService
+    │   └── RefundStatusService
+    │
+    ├── CustomerSupportService
+    │   ├── CustomerTicketService
+    │   ├── LiveChatService
+    │   ├── ComplaintManagementService
+    │   ├── FAQRecommendationService
+    │   └── SupportRoutingService
+    │
+    └── InventoryService
+        ├── StockAvailabilityService
+        ├── StockReservationService
+        ├── WarehouseLookupService
+        ├── RestockNotificationService
+        └── InventoryUpdateService
+
+
+NOTES
+
+- This taxonomy structure is used to represent semantic relationships between service concepts.
+- The revised study uses this structure as a taxonomy-based semantic hierarchy rather than a complete OWL/RDF/SPARQL-based ontology infrastructure.
+- Parent-child concept relationships are used for taxonomy-based matching.
+- Concept distance in this hierarchy is used for taxonomy-distance based semantic similarity.
+- Travel and E-commerce were selected to evaluate the framework across multiple service domains.

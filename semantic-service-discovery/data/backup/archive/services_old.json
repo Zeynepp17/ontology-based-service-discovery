@@ -1,0 +1,1806 @@
+[
+    {
+        "service_id": "TR001",
+        "domain": "travel",
+        "category": "AccommodationService",
+        "service_name": "HotelBookingService",
+        "inputs": [
+            "city",
+            "checkin_date",
+            "checkout_date",
+            "guest_count"
+        ],
+        "outputs": [
+            "hotel_reservation"
+        ],
+        "preconditions": [
+            "valid_payment_method",
+            "available_room"
+        ],
+        "effects": [
+            "booking_confirmed"
+        ],
+        "ontology_concepts": [
+            "AccommodationService",
+            "HotelService"
+        ],
+        "text_description": "Books hotel rooms for travelers based on city, date range and guest count.",
+        "qos": {
+            "response_time_ms": 420,
+            "cost_score": 0.74,
+            "reliability": 0.96
+        }
+    },
+    {
+        "service_id": "TR002",
+        "domain": "travel",
+        "category": "AccommodationService",
+        "service_name": "LuxuryHotelReservationService",
+        "inputs": [
+            "city",
+            "checkin_date",
+            "checkout_date",
+            "room_type"
+        ],
+        "outputs": [
+            "luxury_hotel_reservation"
+        ],
+        "preconditions": [
+            "premium_payment_method"
+        ],
+        "effects": [
+            "luxury_booking_confirmed"
+        ],
+        "ontology_concepts": [
+            "AccommodationService",
+            "LuxuryHotelService"
+        ],
+        "text_description": "Provides reservation services for luxury hotels and premium resorts.",
+        "qos": {
+            "response_time_ms": 310,
+            "cost_score": 0.32,
+            "reliability": 0.99
+        }
+    },
+    {
+        "service_id": "TR003",
+        "domain": "travel",
+        "category": "AccommodationService",
+        "service_name": "BudgetAccommodationFinderService",
+        "inputs": [
+            "city",
+            "max_budget",
+            "guest_count"
+        ],
+        "outputs": [
+            "budget_accommodation_list"
+        ],
+        "preconditions": [
+            "valid_search_request"
+        ],
+        "effects": [
+            "budget_options_returned"
+        ],
+        "ontology_concepts": [
+            "AccommodationService",
+            "BudgetHotelService"
+        ],
+        "text_description": "Finds low-cost accommodation options for budget travelers.",
+        "qos": {
+            "response_time_ms": 680,
+            "cost_score": 0.94,
+            "reliability": 0.81
+        }
+    },
+    {
+        "service_id": "TR004",
+        "domain": "travel",
+        "category": "AccommodationService",
+        "service_name": "ResortBookingService",
+        "inputs": [
+            "destination",
+            "travel_date",
+            "stay_duration"
+        ],
+        "outputs": [
+            "resort_booking"
+        ],
+        "preconditions": [
+            "available_resort"
+        ],
+        "effects": [
+            "resort_reserved"
+        ],
+        "ontology_concepts": [
+            "AccommodationService",
+            "ResortHotelService"
+        ],
+        "text_description": "Books resort hotels and vacation resorts for travelers.",
+        "qos": {
+            "response_time_ms": 390,
+            "cost_score": 0.41,
+            "reliability": 0.95
+        }
+    },
+    {
+        "service_id": "TR005",
+        "domain": "travel",
+        "category": "AccommodationService",
+        "service_name": "HostelReservationService",
+        "inputs": [
+            "city",
+            "travel_date",
+            "bed_count"
+        ],
+        "outputs": [
+            "hostel_reservation"
+        ],
+        "preconditions": [
+            "available_bed"
+        ],
+        "effects": [
+            "hostel_booking_confirmed"
+        ],
+        "ontology_concepts": [
+            "AccommodationService",
+            "HostelService"
+        ],
+        "text_description": "Provides hostel reservation services for backpackers and budget travelers.",
+        "qos": {
+            "response_time_ms": 710,
+            "cost_score": 0.97,
+            "reliability": 0.78
+        }
+    },
+    {
+        "service_id": "TR006",
+        "domain": "travel",
+        "category": "AccommodationService",
+        "service_name": "ApartmentRentalService",
+        "inputs": [
+            "city",
+            "rental_period",
+            "guest_count"
+        ],
+        "outputs": [
+            "apartment_rental_confirmation"
+        ],
+        "preconditions": [
+            "valid_identity"
+        ],
+        "effects": [
+            "apartment_reserved"
+        ],
+        "ontology_concepts": [
+            "AccommodationService",
+            "ApartmentRentalService"
+        ],
+        "text_description": "Offers short-term apartment rental services for travelers.",
+        "qos": {
+            "response_time_ms": 530,
+            "cost_score": 0.69,
+            "reliability": 0.88
+        }
+    },
+    {
+        "service_id": "TR007",
+        "domain": "travel",
+        "category": "AccommodationService",
+        "service_name": "VillaRentalService",
+        "inputs": [
+            "destination",
+            "travel_date",
+            "guest_count"
+        ],
+        "outputs": [
+            "villa_rental_confirmation"
+        ],
+        "preconditions": [
+            "valid_payment_method"
+        ],
+        "effects": [
+            "villa_reserved"
+        ],
+        "ontology_concepts": [
+            "AccommodationService",
+            "VillaRentalService"
+        ],
+        "text_description": "Provides private villa rental services for vacation travelers.",
+        "qos": {
+            "response_time_ms": 460,
+            "cost_score": 0.55,
+            "reliability": 0.92
+        }
+    },
+    {
+        "service_id": "TR008",
+        "domain": "travel",
+        "category": "AccommodationService",
+        "service_name": "CampingReservationService",
+        "inputs": [
+            "location",
+            "camp_date",
+            "tent_count"
+        ],
+        "outputs": [
+            "camping_reservation"
+        ],
+        "preconditions": [
+            "available_camping_area"
+        ],
+        "effects": [
+            "camp_site_reserved"
+        ],
+        "ontology_concepts": [
+            "AccommodationService",
+            "CampingService"
+        ],
+        "text_description": "Reserves camping areas and outdoor accommodation locations.",
+        "qos": {
+            "response_time_ms": 740,
+            "cost_score": 0.96,
+            "reliability": 0.74
+        }
+    },
+    {
+        "service_id": "TR009",
+        "domain": "travel",
+        "category": "AccommodationService",
+        "service_name": "FamilyHotelSearchService",
+        "inputs": [
+            "city",
+            "children_count",
+            "travel_date"
+        ],
+        "outputs": [
+            "family_hotel_list"
+        ],
+        "preconditions": [
+            "valid_search_request"
+        ],
+        "effects": [
+            "family_hotels_found"
+        ],
+        "ontology_concepts": [
+            "AccommodationService",
+            "HotelService"
+        ],
+        "text_description": "Finds family-friendly hotels suitable for travelers with children.",
+        "qos": {
+            "response_time_ms": 510,
+            "cost_score": 0.66,
+            "reliability": 0.90
+        }
+    },
+    {
+        "service_id": "TR010",
+        "domain": "travel",
+        "category": "AccommodationService",
+        "service_name": "PetFriendlyAccommodationService",
+        "inputs": [
+            "city",
+            "pet_type",
+            "travel_date"
+        ],
+        "outputs": [
+            "pet_friendly_accommodation_list"
+        ],
+        "preconditions": [
+            "valid_pet_information"
+        ],
+        "effects": [
+            "pet_friendly_options_found"
+        ],
+        "ontology_concepts": [
+            "AccommodationService",
+            "HotelService"
+        ],
+        "text_description": "Provides accommodation options suitable for travelers with pets.",
+        "qos": {
+            "response_time_ms": 570,
+            "cost_score": 0.71,
+            "reliability": 0.87
+        }
+    },
+    {
+        "service_id": "TR011",
+        "domain": "travel",
+        "category": "AccommodationService",
+        "service_name": "LastMinuteHotelBookingService",
+        "inputs": [
+            "city",
+            "same_day_date",
+            "guest_count"
+        ],
+        "outputs": [
+            "last_minute_booking"
+        ],
+        "preconditions": [
+            "available_room"
+        ],
+        "effects": [
+            "urgent_booking_confirmed"
+        ],
+        "ontology_concepts": [
+            "AccommodationService",
+            "HotelService"
+        ],
+        "text_description": "Provides same-day and urgent hotel booking services for travelers.",
+        "qos": {
+            "response_time_ms": 280,
+            "cost_score": 0.48,
+            "reliability": 0.93
+        }
+    },
+    {
+        "service_id": "TR012",
+        "domain": "travel",
+        "category": "AccommodationService",
+        "service_name": "LongStayApartmentService",
+        "inputs": [
+            "city",
+            "stay_duration",
+            "guest_count"
+        ],
+        "outputs": [
+            "long_term_apartment_options"
+        ],
+        "preconditions": [
+            "minimum_stay_requirement"
+        ],
+        "effects": [
+            "extended_stay_reserved"
+        ],
+        "ontology_concepts": [
+            "AccommodationService",
+            "ApartmentRentalService"
+        ],
+        "text_description": "Provides apartment rental services for long-term travelers.",
+        "qos": {
+            "response_time_ms": 610,
+            "cost_score": 0.73,
+            "reliability": 0.89
+        }
+    },
+    {
+        "service_id": "TR013",
+        "domain": "travel",
+        "category": "AccommodationService",
+        "service_name": "BusinessHotelBookingService",
+        "inputs": [
+            "city",
+            "conference_location",
+            "travel_date"
+        ],
+        "outputs": [
+            "business_hotel_reservation"
+        ],
+        "preconditions": [
+            "corporate_payment_method"
+        ],
+        "effects": [
+            "business_booking_confirmed"
+        ],
+        "ontology_concepts": [
+            "AccommodationService",
+            "HotelService"
+        ],
+        "text_description": "Finds and books hotels suitable for business travelers.",
+        "qos": {
+            "response_time_ms": 350,
+            "cost_score": 0.58,
+            "reliability": 0.97
+        }
+    },
+    {
+        "service_id": "TR014",
+        "domain": "travel",
+        "category": "AccommodationService",
+        "service_name": "BeachResortFinderService",
+        "inputs": [
+            "coastal_city",
+            "travel_date",
+            "guest_count"
+        ],
+        "outputs": [
+            "beach_resort_list"
+        ],
+        "preconditions": [
+            "valid_destination"
+        ],
+        "effects": [
+            "resort_options_found"
+        ],
+        "ontology_concepts": [
+            "AccommodationService",
+            "ResortHotelService"
+        ],
+        "text_description": "Finds beach resort accommodations for vacation travelers.",
+        "qos": {
+            "response_time_ms": 470,
+            "cost_score": 0.52,
+            "reliability": 0.91
+        }
+    },
+    {
+        "service_id": "TR015",
+        "domain": "travel",
+        "category": "AccommodationService",
+        "service_name": "MountainCabinRentalService",
+        "inputs": [
+            "mountain_region",
+            "travel_date",
+            "stay_duration"
+        ],
+        "outputs": [
+            "cabin_rental_confirmation"
+        ],
+        "preconditions": [
+            "available_cabin"
+        ],
+        "effects": [
+            "cabin_reserved"
+        ],
+        "ontology_concepts": [
+            "AccommodationService",
+            "CampingService"
+        ],
+        "text_description": "Provides cabin rental services in mountain and nature destinations.",
+        "qos": {
+            "response_time_ms": 640,
+            "cost_score": 0.67,
+            "reliability": 0.84
+        }
+    },
+    {
+        "service_id": "TR016",
+        "domain": "travel",
+        "category": "AccommodationService",
+        "service_name": "AccommodationComparisonService",
+        "inputs": [
+            "destination",
+            "travel_date",
+            "budget_limit"
+        ],
+        "outputs": [
+            "ranked_accommodation_options"
+        ],
+        "preconditions": [
+            "valid_search_parameters"
+        ],
+        "effects": [
+            "accommodation_rankings_generated"
+        ],
+        "ontology_concepts": [
+            "AccommodationService",
+            "HotelService"
+        ],
+        "text_description": "Compares accommodation options based on budget, quality and traveler preferences.",
+        "qos": {
+            "response_time_ms": 390,
+            "cost_score": 0.64,
+            "reliability": 0.95
+        }
+    },
+    {
+        "service_id": "TR017",
+        "domain": "travel",
+        "category": "TransportationService",
+        "service_name": "FlightReservationService",
+        "inputs": [
+            "departure_city",
+            "arrival_city",
+            "travel_date",
+            "passenger_count"
+        ],
+        "outputs": [
+            "flight_ticket"
+        ],
+        "preconditions": [
+            "available_seat",
+            "valid_payment_method"
+        ],
+        "effects": [
+            "flight_reserved"
+        ],
+        "ontology_concepts": [
+            "TransportationService",
+            "FlightService"
+        ],
+        "text_description": "Finds and reserves flight tickets between departure and arrival cities.",
+        "qos": {
+            "response_time_ms": 360,
+            "cost_score": 0.61,
+            "reliability": 0.96
+        }
+    },
+    {
+        "service_id": "TR018",
+        "domain": "travel",
+        "category": "TransportationService",
+        "service_name": "DomesticFlightBookingService",
+        "inputs": [
+            "departure_city",
+            "arrival_city",
+            "travel_date"
+        ],
+        "outputs": [
+            "domestic_flight_ticket"
+        ],
+        "preconditions": [
+            "available_domestic_flight"
+        ],
+        "effects": [
+            "domestic_flight_booked"
+        ],
+        "ontology_concepts": [
+            "TransportationService",
+            "DomesticFlightService"
+        ],
+        "text_description": "Books domestic flight tickets for travelers within the same country.",
+        "qos": {
+            "response_time_ms": 330,
+            "cost_score": 0.68,
+            "reliability": 0.94
+        }
+    },
+    {
+        "service_id": "TR019",
+        "domain": "travel",
+        "category": "TransportationService",
+        "service_name": "InternationalFlightBookingService",
+        "inputs": [
+            "departure_country",
+            "arrival_country",
+            "travel_date",
+            "passport_number"
+        ],
+        "outputs": [
+            "international_flight_ticket"
+        ],
+        "preconditions": [
+            "valid_passport",
+            "available_international_flight"
+        ],
+        "effects": [
+            "international_flight_booked"
+        ],
+        "ontology_concepts": [
+            "TransportationService",
+            "InternationalFlightService"
+        ],
+        "text_description": "Books international flight tickets for cross-border travel.",
+        "qos": {
+            "response_time_ms": 410,
+            "cost_score": 0.49,
+            "reliability": 0.97
+        }
+    },
+    {
+        "service_id": "TR020",
+        "domain": "travel",
+        "category": "TransportationService",
+        "service_name": "TrainTicketBookingService",
+        "inputs": [
+            "departure_station",
+            "arrival_station",
+            "travel_date"
+        ],
+        "outputs": [
+            "train_ticket"
+        ],
+        "preconditions": [
+            "available_train_seat"
+        ],
+        "effects": [
+            "train_ticket_booked"
+        ],
+        "ontology_concepts": [
+            "TransportationService",
+            "TrainService"
+        ],
+        "text_description": "Books train tickets between selected stations.",
+        "qos": {
+            "response_time_ms": 520,
+            "cost_score": 0.82,
+            "reliability": 0.89
+        }
+    },
+    {
+        "service_id": "TR021",
+        "domain": "travel",
+        "category": "TransportationService",
+        "service_name": "BusReservationService",
+        "inputs": [
+            "departure_city",
+            "arrival_city",
+            "travel_date"
+        ],
+        "outputs": [
+            "bus_ticket"
+        ],
+        "preconditions": [
+            "available_bus_seat"
+        ],
+        "effects": [
+            "bus_ticket_reserved"
+        ],
+        "ontology_concepts": [
+            "TransportationService",
+            "BusService"
+        ],
+        "text_description": "Provides intercity bus ticket reservation services.",
+        "qos": {
+            "response_time_ms": 610,
+            "cost_score": 0.91,
+            "reliability": 0.83
+        }
+    },
+    {
+        "service_id": "TR022",
+        "domain": "travel",
+        "category": "TransportationService",
+        "service_name": "AirportTransferService",
+        "inputs": [
+            "airport",
+            "destination",
+            "arrival_time"
+        ],
+        "outputs": [
+            "airport_transfer_reservation"
+        ],
+        "preconditions": [
+            "valid_location"
+        ],
+        "effects": [
+            "airport_transfer_arranged"
+        ],
+        "ontology_concepts": [
+            "TransportationService",
+            "AirportTransferService"
+        ],
+        "text_description": "Arranges transportation from an airport to a hotel or destination.",
+        "qos": {
+            "response_time_ms": 290,
+            "cost_score": 0.57,
+            "reliability": 0.95
+        }
+    },
+    {
+        "service_id": "TR023",
+        "domain": "travel",
+        "category": "TransportationService",
+        "service_name": "TaxiBookingService",
+        "inputs": [
+            "pickup_location",
+            "dropoff_location",
+            "pickup_time"
+        ],
+        "outputs": [
+            "taxi_booking_confirmation"
+        ],
+        "preconditions": [
+            "valid_location"
+        ],
+        "effects": [
+            "taxi_assigned"
+        ],
+        "ontology_concepts": [
+            "TransportationService",
+            "TaxiService"
+        ],
+        "text_description": "Books taxi transportation between pickup and dropoff locations.",
+        "qos": {
+            "response_time_ms": 260,
+            "cost_score": 0.63,
+            "reliability": 0.91
+        }
+    },
+    {
+        "service_id": "TR024",
+        "domain": "travel",
+        "category": "TransportationService",
+        "service_name": "RideSharingService",
+        "inputs": [
+            "pickup_location",
+            "dropoff_location",
+            "passenger_count"
+        ],
+        "outputs": [
+            "rideshare_option"
+        ],
+        "preconditions": [
+            "available_driver"
+        ],
+        "effects": [
+            "rideshare_trip_created"
+        ],
+        "ontology_concepts": [
+            "TransportationService",
+            "TaxiService"
+        ],
+        "text_description": "Finds ride-sharing options for travelers in a selected area.",
+        "qos": {
+            "response_time_ms": 340,
+            "cost_score": 0.77,
+            "reliability": 0.86
+        }
+    },
+    {
+        "service_id": "TR025",
+        "domain": "travel",
+        "category": "TransportationService",
+        "service_name": "CarRentalService",
+        "inputs": [
+            "city",
+            "rental_date",
+            "rental_duration"
+        ],
+        "outputs": [
+            "car_rental_confirmation"
+        ],
+        "preconditions": [
+            "valid_driver_license",
+            "available_vehicle"
+        ],
+        "effects": [
+            "car_reserved"
+        ],
+        "ontology_concepts": [
+            "TransportationService",
+            "CarRentalService"
+        ],
+        "text_description": "Provides car rental reservation services for travelers.",
+        "qos": {
+            "response_time_ms": 450,
+            "cost_score": 0.59,
+            "reliability": 0.92
+        }
+    },
+    {
+        "service_id": "TR026",
+        "domain": "travel",
+        "category": "TransportationService",
+        "service_name": "BikeRentalService",
+        "inputs": [
+            "city",
+            "rental_date",
+            "rental_duration"
+        ],
+        "outputs": [
+            "bike_rental_confirmation"
+        ],
+        "preconditions": [
+            "available_bike"
+        ],
+        "effects": [
+            "bike_reserved"
+        ],
+        "ontology_concepts": [
+            "TransportationService",
+            "BikeRentalService"
+        ],
+        "text_description": "Offers bicycle rental services for short-distance travel.",
+        "qos": {
+            "response_time_ms": 580,
+            "cost_score": 0.88,
+            "reliability": 0.80
+        }
+    },
+    {
+        "service_id": "TR027",
+        "domain": "travel",
+        "category": "TransportationService",
+        "service_name": "MotorbikeRentalService",
+        "inputs": [
+            "city",
+            "rental_date",
+            "license_type"
+        ],
+        "outputs": [
+            "motorbike_rental_confirmation"
+        ],
+        "preconditions": [
+            "valid_license",
+            "available_motorbike"
+        ],
+        "effects": [
+            "motorbike_reserved"
+        ],
+        "ontology_concepts": [
+            "TransportationService",
+            "BikeRentalService"
+        ],
+        "text_description": "Provides motorbike rental services for travelers who need flexible urban transportation.",
+        "qos": {
+            "response_time_ms": 620,
+            "cost_score": 0.81,
+            "reliability": 0.79
+        }
+    },
+    {
+        "service_id": "TR028",
+        "domain": "travel",
+        "category": "TransportationService",
+        "service_name": "FerryTicketService",
+        "inputs": [
+            "departure_port",
+            "arrival_port",
+            "travel_date"
+        ],
+        "outputs": [
+            "ferry_ticket"
+        ],
+        "preconditions": [
+            "available_ferry_trip"
+        ],
+        "effects": [
+            "ferry_ticket_booked"
+        ],
+        "ontology_concepts": [
+            "TransportationService",
+            "FerryService"
+        ],
+        "text_description": "Books ferry tickets between selected ports.",
+        "qos": {
+            "response_time_ms": 560,
+            "cost_score": 0.76,
+            "reliability": 0.84
+        }
+    },
+    {
+        "service_id": "TR029",
+        "domain": "travel",
+        "category": "TransportationService",
+        "service_name": "PublicTransportRouteService",
+        "inputs": [
+            "current_location",
+            "destination",
+            "departure_time"
+        ],
+        "outputs": [
+            "public_transport_route"
+        ],
+        "preconditions": [
+            "valid_location"
+        ],
+        "effects": [
+            "route_information_returned"
+        ],
+        "ontology_concepts": [
+            "TransportationService",
+            "PublicTransportService"
+        ],
+        "text_description": "Finds public transportation routes using metro, bus or tram options.",
+        "qos": {
+            "response_time_ms": 300,
+            "cost_score": 0.93,
+            "reliability": 0.88
+        }
+    },
+    {
+        "service_id": "TR030",
+        "domain": "travel",
+        "category": "TransportationService",
+        "service_name": "PrivateDriverBookingService",
+        "inputs": [
+            "pickup_location",
+            "destination",
+            "service_time"
+        ],
+        "outputs": [
+            "private_driver_reservation"
+        ],
+        "preconditions": [
+            "available_driver",
+            "valid_payment_method"
+        ],
+        "effects": [
+            "private_driver_assigned"
+        ],
+        "ontology_concepts": [
+            "TransportationService",
+            "TaxiService"
+        ],
+        "text_description": "Books a private driver service for travelers who need personalized transportation.",
+        "qos": {
+            "response_time_ms": 370,
+            "cost_score": 0.42,
+            "reliability": 0.94
+        }
+    },
+    {
+        "service_id": "TR031",
+        "domain": "travel",
+        "category": "TransportationService",
+        "service_name": "MultiModalTransportPlannerService",
+        "inputs": [
+            "origin",
+            "destination",
+            "travel_time"
+        ],
+        "outputs": [
+            "multimodal_transport_plan"
+        ],
+        "preconditions": [
+            "valid_route_request"
+        ],
+        "effects": [
+            "combined_transport_plan_generated"
+        ],
+        "ontology_concepts": [
+            "TransportationService",
+            "RouteOptimizationService"
+        ],
+        "text_description": "Creates transportation plans by combining flight, train, bus, taxi and public transport alternatives.",
+        "qos": {
+            "response_time_ms": 480,
+            "cost_score": 0.70,
+            "reliability": 0.90
+        }
+    },
+    {
+        "service_id": "TR032",
+        "domain": "travel",
+        "category": "TourismService",
+        "service_name": "TourGuideBookingService",
+        "inputs": [
+            "city",
+            "tour_date",
+            "language_preference"
+        ],
+        "outputs": [
+            "tour_guide_reservation"
+        ],
+        "preconditions": [
+            "available_tour_guide"
+        ],
+        "effects": [
+            "tour_guide_booked"
+        ],
+        "ontology_concepts": [
+            "TourismService",
+            "TourGuideService"
+        ],
+        "text_description": "Books local tour guides for travelers based on destination and language preference.",
+        "qos": {
+            "response_time_ms": 430,
+            "cost_score": 0.62,
+            "reliability": 0.93
+        }
+    },
+    {
+        "service_id": "TR033",
+        "domain": "travel",
+        "category": "TourismService",
+        "service_name": "MuseumRecommendationService",
+        "inputs": [
+            "city",
+            "interest_type"
+        ],
+        "outputs": [
+            "museum_recommendations"
+        ],
+        "preconditions": [
+            "valid_location"
+        ],
+        "effects": [
+            "museum_list_generated"
+        ],
+        "ontology_concepts": [
+            "TourismService",
+            "MuseumRecommendationService"
+        ],
+        "text_description": "Recommends museums and exhibitions based on traveler interests.",
+        "qos": {
+            "response_time_ms": 360,
+            "cost_score": 0.89,
+            "reliability": 0.88
+        }
+    },
+    {
+        "service_id": "TR034",
+        "domain": "travel",
+        "category": "TourismService",
+        "service_name": "HistoricalPlaceFinderService",
+        "inputs": [
+            "city",
+            "historical_period"
+        ],
+        "outputs": [
+            "historical_places"
+        ],
+        "preconditions": [
+            "valid_search_request"
+        ],
+        "effects": [
+            "historical_locations_found"
+        ],
+        "ontology_concepts": [
+            "TourismService",
+            "HistoricalPlaceService"
+        ],
+        "text_description": "Finds historical landmarks and heritage locations for tourists.",
+        "qos": {
+            "response_time_ms": 410,
+            "cost_score": 0.84,
+            "reliability": 0.91
+        }
+    },
+    {
+        "service_id": "TR035",
+        "domain": "travel",
+        "category": "TourismService",
+        "service_name": "CityTourReservationService",
+        "inputs": [
+            "city",
+            "tour_date",
+            "participant_count"
+        ],
+        "outputs": [
+            "city_tour_reservation"
+        ],
+        "preconditions": [
+            "available_city_tour"
+        ],
+        "effects": [
+            "city_tour_booked"
+        ],
+        "ontology_concepts": [
+            "TourismService",
+            "CityTourService"
+        ],
+        "text_description": "Books guided city tours for local attractions and landmarks.",
+        "qos": {
+            "response_time_ms": 390,
+            "cost_score": 0.73,
+            "reliability": 0.92
+        }
+    },
+    {
+        "service_id": "TR036",
+        "domain": "travel",
+        "category": "TourismService",
+        "service_name": "LocalEventRecommendationService",
+        "inputs": [
+            "city",
+            "travel_date",
+            "event_type"
+        ],
+        "outputs": [
+            "local_event_list"
+        ],
+        "preconditions": [
+            "valid_destination"
+        ],
+        "effects": [
+            "events_found"
+        ],
+        "ontology_concepts": [
+            "TourismService",
+            "EventRecommendationService"
+        ],
+        "text_description": "Finds concerts, festivals and local events for travelers.",
+        "qos": {
+            "response_time_ms": 340,
+            "cost_score": 0.90,
+            "reliability": 0.87
+        }
+    },
+    {
+        "service_id": "TR037",
+        "domain": "travel",
+        "category": "TourismService",
+        "service_name": "RestaurantRecommendationService",
+        "inputs": [
+            "city",
+            "food_preference",
+            "budget_level"
+        ],
+        "outputs": [
+            "restaurant_recommendations"
+        ],
+        "preconditions": [
+            "valid_search_request"
+        ],
+        "effects": [
+            "restaurant_list_generated"
+        ],
+        "ontology_concepts": [
+            "TourismService",
+            "RestaurantRecommendationService"
+        ],
+        "text_description": "Recommends restaurants based on cuisine preference and budget.",
+        "qos": {
+            "response_time_ms": 280,
+            "cost_score": 0.93,
+            "reliability": 0.89
+        }
+    },
+    {
+        "service_id": "TR038",
+        "domain": "travel",
+        "category": "TourismService",
+        "service_name": "AdventureActivityBookingService",
+        "inputs": [
+            "destination",
+            "activity_type",
+            "travel_date"
+        ],
+        "outputs": [
+            "activity_reservation"
+        ],
+        "preconditions": [
+            "available_activity_slot"
+        ],
+        "effects": [
+            "activity_booked"
+        ],
+        "ontology_concepts": [
+            "TourismService",
+            "AdventureActivityService"
+        ],
+        "text_description": "Books adventure tourism activities such as rafting, diving and hiking.",
+        "qos": {
+            "response_time_ms": 510,
+            "cost_score": 0.58,
+            "reliability": 0.90
+        }
+    },
+    {
+        "service_id": "TR039",
+        "domain": "travel",
+        "category": "TourismService",
+        "service_name": "CulturalExperienceFinderService",
+        "inputs": [
+            "city",
+            "culture_interest"
+        ],
+        "outputs": [
+            "cultural_experience_list"
+        ],
+        "preconditions": [
+            "valid_location"
+        ],
+        "effects": [
+            "cultural_experiences_found"
+        ],
+        "ontology_concepts": [
+            "TourismService",
+            "CulturalExperienceService"
+        ],
+        "text_description": "Finds local cultural experiences and traditional activities for tourists.",
+        "qos": {
+            "response_time_ms": 470,
+            "cost_score": 0.75,
+            "reliability": 0.86
+        }
+    },
+    {
+        "service_id": "TR040",
+        "domain": "travel",
+        "category": "TourismService",
+        "service_name": "TouristAttractionSearchService",
+        "inputs": [
+            "city",
+            "interest_category"
+        ],
+        "outputs": [
+            "tourist_attraction_list"
+        ],
+        "preconditions": [
+            "valid_search_parameters"
+        ],
+        "effects": [
+            "tourist_attractions_found"
+        ],
+        "ontology_concepts": [
+            "TourismService",
+            "TouristAttractionService"
+        ],
+        "text_description": "Searches popular tourist attractions and sightseeing destinations.",
+        "qos": {
+            "response_time_ms": 320,
+            "cost_score": 0.88,
+            "reliability": 0.90
+        }
+    },
+    {
+        "service_id": "TR041",
+        "domain": "travel",
+        "category": "PlanningService",
+        "service_name": "TripPlannerService",
+        "inputs": [
+            "destination",
+            "travel_duration",
+            "budget_level"
+        ],
+        "outputs": [
+            "trip_plan"
+        ],
+        "preconditions": [
+            "valid_trip_request"
+        ],
+        "effects": [
+            "trip_itinerary_created"
+        ],
+        "ontology_concepts": [
+            "PlanningService",
+            "TripPlannerService"
+        ],
+        "text_description": "Creates travel plans based on destination, duration and budget preferences.",
+        "qos": {
+            "response_time_ms": 430,
+            "cost_score": 0.71,
+            "reliability": 0.94
+        }
+    },
+    {
+        "service_id": "TR042",
+        "domain": "travel",
+        "category": "PlanningService",
+        "service_name": "BudgetTripPlannerService",
+        "inputs": [
+            "destination",
+            "max_budget",
+            "travel_duration"
+        ],
+        "outputs": [
+            "budget_trip_plan"
+        ],
+        "preconditions": [
+            "valid_budget_information"
+        ],
+        "effects": [
+            "budget_trip_generated"
+        ],
+        "ontology_concepts": [
+            "PlanningService",
+            "BudgetPlannerService"
+        ],
+        "text_description": "Generates low-cost travel plans for budget-conscious travelers.",
+        "qos": {
+            "response_time_ms": 520,
+            "cost_score": 0.92,
+            "reliability": 0.86
+        }
+    },
+    {
+        "service_id": "TR043",
+        "domain": "travel",
+        "category": "PlanningService",
+        "service_name": "RouteOptimizationService",
+        "inputs": [
+            "origin",
+            "multiple_destinations",
+            "travel_time"
+        ],
+        "outputs": [
+            "optimized_route"
+        ],
+        "preconditions": [
+            "valid_route_data"
+        ],
+        "effects": [
+            "optimized_travel_route_generated"
+        ],
+        "ontology_concepts": [
+            "PlanningService",
+            "RouteOptimizationService"
+        ],
+        "text_description": "Optimizes travel routes between multiple destinations.",
+        "qos": {
+            "response_time_ms": 360,
+            "cost_score": 0.79,
+            "reliability": 0.95
+        }
+    },
+    {
+        "service_id": "TR044",
+        "domain": "travel",
+        "category": "PlanningService",
+        "service_name": "VacationRecommendationService",
+        "inputs": [
+            "season",
+            "budget_level",
+            "travel_style"
+        ],
+        "outputs": [
+            "vacation_recommendations"
+        ],
+        "preconditions": [
+            "valid_user_preferences"
+        ],
+        "effects": [
+            "vacation_options_generated"
+        ],
+        "ontology_concepts": [
+            "PlanningService",
+            "VacationRecommendationService"
+        ],
+        "text_description": "Recommends vacation destinations according to traveler preferences.",
+        "qos": {
+            "response_time_ms": 310,
+            "cost_score": 0.85,
+            "reliability": 0.91
+        }
+    },
+    {
+        "service_id": "TR045",
+        "domain": "travel",
+        "category": "PlanningService",
+        "service_name": "SchedulePlannerService",
+        "inputs": [
+            "travel_dates",
+            "activity_preferences"
+        ],
+        "outputs": [
+            "daily_schedule"
+        ],
+        "preconditions": [
+            "valid_schedule_request"
+        ],
+        "effects": [
+            "travel_schedule_created"
+        ],
+        "ontology_concepts": [
+            "PlanningService",
+            "SchedulePlannerService"
+        ],
+        "text_description": "Creates daily travel schedules and activity timelines for tourists.",
+        "qos": {
+            "response_time_ms": 400,
+            "cost_score": 0.76,
+            "reliability": 0.90
+        }
+    },
+    {
+        "service_id": "TR046",
+        "domain": "travel",
+        "category": "PlanningService",
+        "service_name": "GroupTravelPlannerService",
+        "inputs": [
+            "group_size",
+            "destination",
+            "travel_dates"
+        ],
+        "outputs": [
+            "group_travel_plan"
+        ],
+        "preconditions": [
+            "valid_group_information"
+        ],
+        "effects": [
+            "group_trip_organized"
+        ],
+        "ontology_concepts": [
+            "PlanningService",
+            "TripPlannerService"
+        ],
+        "text_description": "Plans trips and transportation arrangements for travel groups.",
+        "qos": {
+            "response_time_ms": 470,
+            "cost_score": 0.69,
+            "reliability": 0.92
+        }
+    },
+    {
+        "service_id": "TR047",
+        "domain": "travel",
+        "category": "PlanningService",
+        "service_name": "WeekendGetawayPlannerService",
+        "inputs": [
+            "departure_city",
+            "weekend_dates",
+            "budget_level"
+        ],
+        "outputs": [
+            "weekend_trip_plan"
+        ],
+        "preconditions": [
+            "valid_trip_request"
+        ],
+        "effects": [
+            "short_trip_plan_created"
+        ],
+        "ontology_concepts": [
+            "PlanningService",
+            "VacationRecommendationService"
+        ],
+        "text_description": "Creates short vacation and weekend getaway travel plans.",
+        "qos": {
+            "response_time_ms": 340,
+            "cost_score": 0.82,
+            "reliability": 0.89
+        }
+    },
+    {
+        "service_id": "TR048",
+        "domain": "travel",
+        "category": "PlanningService",
+        "service_name": "PersonalizedItineraryService",
+        "inputs": [
+            "traveler_preferences",
+            "destination",
+            "travel_duration"
+        ],
+        "outputs": [
+            "personalized_itinerary"
+        ],
+        "preconditions": [
+            "valid_preference_data"
+        ],
+        "effects": [
+            "custom_itinerary_generated"
+        ],
+        "ontology_concepts": [
+            "PlanningService",
+            "SchedulePlannerService"
+        ],
+        "text_description": "Creates personalized travel itineraries based on traveler interests and behavior.",
+        "qos": {
+            "response_time_ms": 390,
+            "cost_score": 0.74,
+            "reliability": 0.94
+        }
+    },
+    {
+        "service_id": "TR049",
+        "domain": "travel",
+        "category": "DocumentationService",
+        "service_name": "VisaApplicationService",
+        "inputs": [
+            "destination_country",
+            "passport_number",
+            "travel_date"
+        ],
+        "outputs": [
+            "visa_application_confirmation"
+        ],
+        "preconditions": [
+            "valid_passport",
+            "required_documents_uploaded"
+        ],
+        "effects": [
+            "visa_application_submitted"
+        ],
+        "ontology_concepts": [
+            "DocumentationService",
+            "VisaApplicationService"
+        ],
+        "text_description": "Submits visa applications for international travelers.",
+        "qos": {
+            "response_time_ms": 620,
+            "cost_score": 0.58,
+            "reliability": 0.95
+        }
+    },
+    {
+        "service_id": "TR050",
+        "domain": "travel",
+        "category": "DocumentationService",
+        "service_name": "PassportRenewalService",
+        "inputs": [
+            "passport_number",
+            "identity_information"
+        ],
+        "outputs": [
+            "passport_renewal_request"
+        ],
+        "preconditions": [
+            "valid_identity"
+        ],
+        "effects": [
+            "passport_renewal_submitted"
+        ],
+        "ontology_concepts": [
+            "DocumentationService",
+            "PassportRenewalService"
+        ],
+        "text_description": "Provides passport renewal application services for travelers.",
+        "qos": {
+            "response_time_ms": 710,
+            "cost_score": 0.49,
+            "reliability": 0.96
+        }
+    },
+    {
+        "service_id": "TR051",
+        "domain": "travel",
+        "category": "DocumentationService",
+        "service_name": "EmbassyAppointmentService",
+        "inputs": [
+            "embassy_country",
+            "appointment_date",
+            "application_type"
+        ],
+        "outputs": [
+            "embassy_appointment_confirmation"
+        ],
+        "preconditions": [
+            "valid_application_request"
+        ],
+        "effects": [
+            "embassy_appointment_booked"
+        ],
+        "ontology_concepts": [
+            "DocumentationService",
+            "EmbassyAppointmentService"
+        ],
+        "text_description": "Books embassy appointments for visa and travel document processes.",
+        "qos": {
+            "response_time_ms": 540,
+            "cost_score": 0.67,
+            "reliability": 0.92
+        }
+    },
+    {
+        "service_id": "TR052",
+        "domain": "travel",
+        "category": "DocumentationService",
+        "service_name": "TravelDocumentVerificationService",
+        "inputs": [
+            "passport_number",
+            "visa_document",
+            "travel_country"
+        ],
+        "outputs": [
+            "document_verification_result"
+        ],
+        "preconditions": [
+            "uploaded_documents_available"
+        ],
+        "effects": [
+            "travel_documents_verified"
+        ],
+        "ontology_concepts": [
+            "DocumentationService",
+            "TravelDocumentVerificationService"
+        ],
+        "text_description": "Verifies passports, visas and travel documents before international trips.",
+        "qos": {
+            "response_time_ms": 450,
+            "cost_score": 0.72,
+            "reliability": 0.97
+        }
+    },
+    {
+        "service_id": "TR053",
+        "domain": "travel",
+        "category": "InsuranceAndPaymentService",
+        "service_name": "TravelInsuranceService",
+        "inputs": [
+            "destination",
+            "travel_duration",
+            "traveler_age"
+        ],
+        "outputs": [
+            "travel_insurance_policy"
+        ],
+        "preconditions": [
+            "valid_identity_information"
+        ],
+        "effects": [
+            "insurance_policy_created"
+        ],
+        "ontology_concepts": [
+            "InsuranceAndPaymentService",
+            "TravelInsuranceService"
+        ],
+        "text_description": "Creates travel insurance policies for international and domestic travelers.",
+        "qos": {
+            "response_time_ms": 390,
+            "cost_score": 0.68,
+            "reliability": 0.96
+        }
+    },
+    {
+        "service_id": "TR054",
+        "domain": "travel",
+        "category": "InsuranceAndPaymentService",
+        "service_name": "BookingCancellationService",
+        "inputs": [
+            "reservation_id",
+            "cancellation_reason"
+        ],
+        "outputs": [
+            "cancellation_confirmation"
+        ],
+        "preconditions": [
+            "valid_reservation"
+        ],
+        "effects": [
+            "booking_cancelled"
+        ],
+        "ontology_concepts": [
+            "InsuranceAndPaymentService",
+            "BookingCancellationService"
+        ],
+        "text_description": "Cancels hotel, transportation or activity reservations for travelers.",
+        "qos": {
+            "response_time_ms": 340,
+            "cost_score": 0.84,
+            "reliability": 0.91
+        }
+    },
+    {
+        "service_id": "TR055",
+        "domain": "travel",
+        "category": "InsuranceAndPaymentService",
+        "service_name": "RefundProcessingService",
+        "inputs": [
+            "transaction_id",
+            "refund_reason"
+        ],
+        "outputs": [
+            "refund_status"
+        ],
+        "preconditions": [
+            "eligible_refund_request"
+        ],
+        "effects": [
+            "refund_process_started"
+        ],
+        "ontology_concepts": [
+            "InsuranceAndPaymentService",
+            "RefundService"
+        ],
+        "text_description": "Processes refund requests for cancelled travel services and reservations.",
+        "qos": {
+            "response_time_ms": 510,
+            "cost_score": 0.77,
+            "reliability": 0.89
+        }
+    },
+    {
+        "service_id": "TR056",
+        "domain": "travel",
+        "category": "InsuranceAndPaymentService",
+        "service_name": "CurrencyExchangeService",
+        "inputs": [
+            "source_currency",
+            "target_currency",
+            "exchange_amount"
+        ],
+        "outputs": [
+            "converted_currency_amount"
+        ],
+        "preconditions": [
+            "valid_exchange_request"
+        ],
+        "effects": [
+            "currency_converted"
+        ],
+        "ontology_concepts": [
+            "InsuranceAndPaymentService",
+            "CurrencyExchangeService"
+        ],
+        "text_description": "Converts currencies for travelers using current exchange rates.",
+        "qos": {
+            "response_time_ms": 260,
+            "cost_score": 0.91,
+            "reliability": 0.90
+        }
+    },
+    {
+        "service_id": "TR057",
+        "domain": "travel",
+        "category": "InsuranceAndPaymentService",
+        "service_name": "InternationalPaymentService",
+        "inputs": [
+            "payment_amount",
+            "destination_country",
+            "payment_method"
+        ],
+        "outputs": [
+            "international_payment_confirmation"
+        ],
+        "preconditions": [
+            "valid_payment_method",
+            "sufficient_balance"
+        ],
+        "effects": [
+            "payment_completed"
+        ],
+        "ontology_concepts": [
+            "InsuranceAndPaymentService",
+            "InternationalPaymentService"
+        ],
+        "text_description": "Processes international travel-related payments and transactions.",
+        "qos": {
+            "response_time_ms": 300,
+            "cost_score": 0.74,
+            "reliability": 0.97
+        }
+    },
+    {
+        "service_id": "TR058",
+        "domain": "travel",
+        "category": "SafetyAndWeatherService",
+        "service_name": "WeatherForecastService",
+        "inputs": [
+            "destination",
+            "travel_date"
+        ],
+        "outputs": [
+            "weather_forecast"
+        ],
+        "preconditions": [
+            "valid_destination"
+        ],
+        "effects": [
+            "weather_information_returned"
+        ],
+        "ontology_concepts": [
+            "SafetyAndWeatherService",
+            "WeatherForecastService"
+        ],
+        "text_description": "Provides weather forecasts for travel destinations and dates.",
+        "qos": {
+            "response_time_ms": 240,
+            "cost_score": 0.95,
+            "reliability": 0.92
+        }
+    },
+    {
+        "service_id": "TR059",
+        "domain": "travel",
+        "category": "SafetyAndWeatherService",
+        "service_name": "EmergencyTravelAlertService",
+        "inputs": [
+            "destination",
+            "travel_date",
+            "traveler_contact"
+        ],
+        "outputs": [
+            "emergency_travel_alert"
+        ],
+        "preconditions": [
+            "valid_destination",
+            "active_alert_source"
+        ],
+        "effects": [
+            "travel_alert_sent"
+        ],
+        "ontology_concepts": [
+            "SafetyAndWeatherService",
+            "EmergencyTravelAlertService"
+        ],
+        "text_description": "Sends emergency travel alerts about safety risks, disruptions and urgent destination warnings.",
+        "qos": {
+            "response_time_ms": 190,
+            "cost_score": 0.86,
+            "reliability": 0.98
+        }
+    },
+    {
+        "service_id": "TR060",
+        "domain": "travel",
+        "category": "SafetyAndWeatherService",
+        "service_name": "TravelRiskAssessmentService",
+        "inputs": [
+            "destination",
+            "travel_period",
+            "traveler_profile"
+        ],
+        "outputs": [
+            "travel_risk_score"
+        ],
+        "preconditions": [
+            "valid_risk_parameters"
+        ],
+        "effects": [
+            "risk_assessment_generated"
+        ],
+        "ontology_concepts": [
+            "SafetyAndWeatherService",
+            "TravelRiskAssessmentService"
+        ],
+        "text_description": "Analyzes travel safety risks based on destination, travel period and traveler profile.",
+        "qos": {
+            "response_time_ms": 420,
+            "cost_score": 0.70,
+            "reliability": 0.94
+        }
+    }
+]

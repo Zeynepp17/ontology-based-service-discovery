@@ -8,70 +8,15 @@ BASE_DIR = Path(__file__).resolve().parents[1]
 
 SERVICES_PATH = BASE_DIR / "data" / "services" / "services.json"
 QUERIES_PATH = BASE_DIR / "data" / "queries" / "queries.json"
+TAXONOMY_PATH = BASE_DIR / "data" / "taxonomy" / "taxonomy_parents.json"
 
 
-ONTOLOGY_PARENTS = {
-    "LuxuryHotelService": "HotelService",
-    "BudgetHotelService": "HotelService",
-    "ResortHotelService": "HotelService",
+def load_json(path):
+    with open(path, "r", encoding="utf-8") as file:
+        return json.load(file)
 
-    "HotelService": "AccommodationService",
-    "HostelService": "AccommodationService",
-    "ApartmentRentalService": "AccommodationService",
-    "VillaRentalService": "AccommodationService",
-    "CampingService": "AccommodationService",
 
-    "DomesticFlightService": "FlightService",
-    "InternationalFlightService": "FlightService",
-    "FlightService": "TransportationService",
-    "TrainService": "TransportationService",
-    "BusService": "TransportationService",
-    "TaxiService": "TransportationService",
-    "AirportTransferService": "TransportationService",
-    "CarRentalService": "TransportationService",
-    "BikeRentalService": "TransportationService",
-    "FerryService": "TransportationService",
-    "PublicTransportService": "TransportationService",
-
-    "TourGuideService": "TourismService",
-    "MuseumRecommendationService": "TourismService",
-    "HistoricalPlaceService": "TourismService",
-    "CityTourService": "TourismService",
-    "EventRecommendationService": "TourismService",
-    "RestaurantRecommendationService": "TourismService",
-    "AdventureActivityService": "TourismService",
-    "CulturalExperienceService": "TourismService",
-    "TouristAttractionService": "TourismService",
-
-    "TripPlannerService": "PlanningService",
-    "BudgetPlannerService": "PlanningService",
-    "RouteOptimizationService": "PlanningService",
-    "VacationRecommendationService": "PlanningService",
-    "SchedulePlannerService": "PlanningService",
-
-    "VisaApplicationService": "DocumentationService",
-    "PassportRenewalService": "DocumentationService",
-    "EmbassyAppointmentService": "DocumentationService",
-    "TravelDocumentVerificationService": "DocumentationService",
-
-    "TravelInsuranceService": "InsuranceAndPaymentService",
-    "BookingCancellationService": "InsuranceAndPaymentService",
-    "RefundService": "InsuranceAndPaymentService",
-    "CurrencyExchangeService": "InsuranceAndPaymentService",
-    "InternationalPaymentService": "InsuranceAndPaymentService",
-
-    "WeatherForecastService": "SafetyAndWeatherService",
-    "EmergencyTravelAlertService": "SafetyAndWeatherService",
-    "TravelRiskAssessmentService": "SafetyAndWeatherService",
-
-    "AccommodationService": "TravelService",
-    "TransportationService": "TravelService",
-    "TourismService": "TravelService",
-    "PlanningService": "TravelService",
-    "DocumentationService": "TravelService",
-    "InsuranceAndPaymentService": "TravelService",
-    "SafetyAndWeatherService": "TravelService",
-}
+ONTOLOGY_PARENTS = load_json(TAXONOMY_PATH)
 
 
 def load_json(path):
@@ -91,36 +36,63 @@ def get_ancestors(concept):
     return ancestors
 
 
+def concept_distance(concept_a, concept_b):
+    if concept_a == concept_b:
+        return 0
+
+    ancestors_a = [concept_a] + get_ancestors(concept_a)
+    ancestors_b = [concept_b] + get_ancestors(concept_b)
+
+    min_distance = None
+
+    for index_a, ancestor_a in enumerate(ancestors_a):
+        for index_b, ancestor_b in enumerate(ancestors_b):
+            if ancestor_a == ancestor_b:
+                distance = index_a + index_b
+
+                if min_distance is None or distance < min_distance:
+                    min_distance = distance
+
+    return min_distance
+
+
 def concept_similarity(query_concept, service_concept):
-    if query_concept == service_concept:
+    distance = concept_distance(query_concept, service_concept)
+
+    if distance is None:
+        return 0.0
+
+    if distance == 0:
         return 1.0
 
-    query_ancestors = get_ancestors(query_concept)
-    service_ancestors = get_ancestors(service_concept)
-
-    if service_concept in query_ancestors:
+    if distance == 1:
         return 0.8
 
-    if query_concept in service_ancestors:
-        return 0.8
+    if distance == 2:
+        return 0.6
 
-    common_ancestors = set(query_ancestors) & set(service_ancestors)
+    if distance == 3:
+        return 0.4
 
-    if common_ancestors:
-        return 0.5
-
-    return 0.0
+    return 0.2
 
 
 def ontology_similarity(query_concepts, service_concepts):
-    best_score = 0.0
+    scores = []
 
     for query_concept in query_concepts:
+        best_score_for_query_concept = 0.0
+
         for service_concept in service_concepts:
             score = concept_similarity(query_concept, service_concept)
-            best_score = max(best_score, score)
+            best_score_for_query_concept = max(best_score_for_query_concept, score)
 
-    return best_score
+        scores.append(best_score_for_query_concept)
+
+    if not scores:
+        return 0.0
+
+    return sum(scores) / len(scores)
 
 
 def rank_services_ontology(query, services, top_k=10):
@@ -209,7 +181,7 @@ def main():
     total_ndcg_5 = 0.0
     total_time = 0.0
 
-    print("Ontology-Based Matching Started")
+    print("Ontology-Based Matching V2 Started")
     print(f"Loaded services: {len(services)}")
     print(f"Loaded queries: {len(queries)}")
     print("=" * 80)
